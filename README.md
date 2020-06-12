@@ -15,7 +15,7 @@ $ system-cache-prune.sh subsystem1 subsystem2
 ## Subsystems
 
 - [composer]: Deletes all content from Composer's cache directories.
-- [docker]: Remove all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes.
+- [docker]: Remove all unused containers, images (both dangling and unreferenced).
 - [yarn]: Remove the shared cache files.
 
 [composer]: https://getcomposer.org/doc/03-cli.md#clear-cache-clearcache-cc
