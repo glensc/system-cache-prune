@@ -31,6 +31,9 @@ prune_subsys() {
 		prune_subsys docker:container
 		prune_subsys docker:image
 		;;
+	npm)
+		npm cache clean --force
+		;;
 	yarn)
 		yarn cache clean
 		;;
@@ -49,7 +52,7 @@ cleanup() {
 }
 
 main() {
-	test -n "${1:-}" || set -- brew composer docker yarn
+	test -n "${1:-}" || set -- brew composer docker npm yarn
 
 	for subsys in "$@"; do
 		cleanup "$subsys"
