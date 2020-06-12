@@ -18,8 +18,15 @@ prune_subsys() {
 	composer)
 		composer clear-cache
 		;;
+	docker:container)
+		docker container prune -f
+		;;
+	docker:image)
+		docker image prune -f
+		;;
 	docker)
-		docker system prune -af
+		prune_subsys docker:container
+		prune_subsys docker:image
 		;;
 	yarn)
 		yarn cache clean
