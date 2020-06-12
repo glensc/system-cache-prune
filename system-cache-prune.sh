@@ -15,6 +15,9 @@ prune_subsys() {
 	local subsys="$1"
 
 	case "$subsys" in
+	brew)
+		brew cleanup -s
+		;;
 	composer)
 		composer clear-cache
 		;;
@@ -46,7 +49,7 @@ cleanup() {
 }
 
 main() {
-	test -n "${1:-}" || set -- composer docker yarn
+	test -n "${1:-}" || set -- brew composer docker yarn
 
 	for subsys in "$@"; do
 		cleanup "$subsys"

@@ -20,10 +20,12 @@ $ system-cache-prune.sh subsystem1 subsystem2
 
 ## Subsystems
 
+- [brew]: Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae.
 - [composer]: Deletes all content from Composer's cache directories.
 - [docker]: Remove all unused containers, images (both dangling and unreferenced).
 - [yarn]: Remove the shared cache files.
 
+[brew]: https://docs.brew.sh/FAQ#how-do-i-uninstall-old-versions-of-a-formula
 [composer]: https://getcomposer.org/doc/03-cli.md#clear-cache-clearcache-cc
 [docker]: https://docs.docker.com/engine/reference/commandline/system_prune/
 [yarn]: https://yarnpkg.com/cli/cache/clean
