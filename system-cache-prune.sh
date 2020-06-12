@@ -45,6 +45,12 @@ cleanup() {
 	printf "%s\n%s\n\n%s\n\n" "$before" "$after" "$output"
 }
 
-cleanup composer
-cleanup docker
-cleanup yarn
+main() {
+	test -n "${1:-}" || set -- composer docker yarn
+
+	for subsys in "$@"; do
+		cleanup "$subsys"
+	done
+}
+
+main "$@"

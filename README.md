@@ -5,7 +5,15 @@ Clear caches from the system.
 This tool is intended to cleanup various caches on machine where free
 disk availability is regularly critical.
 
-Currently cleaned subsystems:
+## Usage
+
+```
+$ system-cache-prune.sh
+$ system-cache-prune.sh subsystem1 subsystem2
+```
+
+## Subsystems
+
 - [composer]: Deletes all content from Composer's cache directories.
 - [docker]: Remove all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes.
 - [yarn]: Remove the shared cache files.
