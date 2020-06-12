@@ -5,6 +5,12 @@ Clear caches from the system.
 This tool is intended to cleanup various caches on machine where free
 disk availability is regularly critical.
 
+I got tried of remembering which command does the cleanup, is it
+- `yarn cache-clear`, `yarn clear-cache`, `yarn clear cache`?
+- `composer clean cache`?
+
+so I wrote this script and polished it.
+
 ## Usage
 
 ```
