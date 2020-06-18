@@ -18,6 +18,12 @@ prune_subsys() {
 	brew)
 		brew cleanup -s
 		;;
+	apple:garageband)
+		# https://smallbusiness.chron.com/delete-garageband-mac-29847.html
+		rm -rf "/Applications/GarageBand.app"
+		rm -rf "/Library/Application Support/GarageBand"
+		rm -rf "/Library/Audio/Apple Loops/Apple"
+		;;
 	composer)
 		composer clear-cache
 		;;
