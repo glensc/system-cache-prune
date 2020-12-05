@@ -25,9 +25,11 @@ $ system-cache-prune.sh subsystem1 subsystem2
 - [docker]: Remove all unused containers, images (both dangling and unreferenced).
 - [npm]: Delete all data out of the cache folder.
 - [yarn]: Remove the shared cache files.
+- [docker:disk-image]: Compact `Docker.raw` or `Docker.qcow2` to return space to the OS.
 
 [brew]: https://docs.brew.sh/FAQ#how-do-i-uninstall-old-versions-of-a-formula
 [composer]: https://getcomposer.org/doc/03-cli.md#clear-cache-clearcache-cc
 [docker]: https://docs.docker.com/engine/reference/commandline/system_prune/
+[docker:disk-image]: https://docs.docker.com/docker-for-mac/space/
 [yarn]: https://yarnpkg.com/cli/cache/clean
 [npm]: https://docs.npmjs.com/cli-commands/cache.html
