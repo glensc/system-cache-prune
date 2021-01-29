@@ -6,9 +6,15 @@
 set -eu
 
 disk_usage() {
-	local out
-	out=$(df -h ~ --output=used,pcent,target)
-	echo "$out" | tail -n1
+	out=$(df -k ~ --output=used | tail -n 1)
+}
+
+usage_diff() {
+	awk  -vbefore="$1" -vafter="$2" 'BEGIN {
+		diff = (before - after) / 1024;
+		printf("%7.02f MiB\n", i, m, f[i], s[i]);
+		exit;
+	}'
 }
 
 prune_subsys() {
@@ -75,9 +81,11 @@ cleanup() {
 
 	printf "=> Cleaning $subsys\n"
 	before=$(disk_usage)
-	output=$(prune_subsys "$subsys")
+	output=$(prune_subsys "$subsys" 2>&1)
 	after=$(disk_usage)
-	printf "%s\n%s\n\n%s\n\n" "$before" "$after" "$output"
+	diff=$(usage_diff "$before" "$after")
+
+	printf "Freed: %s\n\n%s\n\n" "$diff" "$output"
 }
 
 main() {
