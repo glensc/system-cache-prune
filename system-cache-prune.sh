@@ -26,6 +26,7 @@ prune_subsys() {
 		;;
 	apple:garageband)
 		# https://smallbusiness.chron.com/delete-garageband-mac-29847.html
+		# https://garagebandonpc.com/uninstall/
 		rm -rf "/Applications/GarageBand.app"
 		rm -rf "/Library/Application Support/GarageBand"
 		rm -rf "/Library/Audio/Apple Loops/Apple"
