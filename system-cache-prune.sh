@@ -31,6 +31,28 @@ prune_subsys() {
 		rm -rf "/Library/Application Support/GarageBand"
 		rm -rf "/Library/Audio/Apple Loops/Apple"
 		;;
+	apple:xcode)
+		# https://stackoverflow.com/questions/31011062/how-to-completely-uninstall-xcode-and-clear-all-settings
+		# https://onexlab-io.medium.com/uninstall-xcode-from-macos-eca1b69dc836
+		killall Xcode
+		xcrun --kill-cache
+		#xcodebuild -alltargets clean
+		rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang/ModuleCache"
+		rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang.$(whoami)/ModuleCache"
+		rm -rf /Applications/Xcode.app
+		rm -rf ~/Library/Caches/com.apple.dt.Xcode
+		rm -rf ~/Library/Developer
+		rm -rf ~/Library/MobileDevice
+		rm -rf ~/Library/Preferences/com.apple.dt.Xcode.plist
+		rm -rf ~/Library/Preferences/com.apple.dt.xcodebuild.plist
+		sudo rm -rf /Library/Preferences/com.apple.dt.Xcode.plist
+		sudo rm -rf /System/Library/Receipts/com.apple.pkg.XcodeExtensionSupport.bom
+		sudo rm -rf /System/Library/Receipts/com.apple.pkg.XcodeExtensionSupport.plist
+		sudo rm -rf /System/Library/Receipts/com.apple.pkg.XcodeSystemResources.bom
+		sudo rm -rf /System/Library/Receipts/com.apple.pkg.XcodeSystemResources.plist
+		sudo rm -rf /private/var/db/receipts/com.apple.pkg.Xcode.bom
+		set +x
+		;;
 	apple:cleanmymac4)
 		rm -f "$HOME/Library/LaunchAgents/com.macpaw.CleanMyMac4.Updater.plist"
 		rm -f "$HOME/Library/Preferences/com.macpaw.CleanMyMac4.HealthMonitor.plist"
