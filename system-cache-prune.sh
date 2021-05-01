@@ -123,7 +123,7 @@ cleanup() {
 
 	printf "=> Cleaning $subsys\n"
 	before=$(disk_usage)
-	output=$(prune_subsys "$subsys" 2>&1)
+	output=$(prune_subsys "$subsys" 2>&1 || :)
 	after=$(disk_usage)
 	diff=$(usage_diff "$before" "$after")
 
