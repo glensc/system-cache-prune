@@ -81,12 +81,16 @@ prune_subsys() {
 	docker:image)
 		docker image prune -f
 		;;
+	docker:builder)
+		docker builder prune -fa
+		;;
 	docker:disk-image)
 		docker run --privileged --pid=host docker/desktop-reclaim-space
 		;;
 	docker)
 		prune_subsys docker:container
 		prune_subsys docker:image
+		prune_subsys docker:builder
 		prune_subsys docker:disk-image
 		;;
 	npm)
