@@ -99,6 +99,21 @@ prune_subsys() {
 	yarn)
 		yarn cache clean
 		;;
+	cpanm)
+		rm -rf ~/.cpanm/work
+		;;
+	draft)
+		rm -rf ~/.draft/cache
+		;;
+	helm)
+		rm -rf ~/.helm/repository/local/
+		;;
+	node-gyp)
+		rm -rf ~/.node-gyp/
+		;;
+	tabnine)
+		rm -rf ~/.tabnine/
+		;;
 	esac
 }
 
