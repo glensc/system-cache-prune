@@ -6,7 +6,7 @@
 set -eu
 
 disk_usage() {
-	out=$(df -k ~ --output=used | tail -n 1)
+	df -k ~ --output=used | tail -n 1
 }
 
 usage_diff() {
