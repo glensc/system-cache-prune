@@ -23,6 +23,7 @@ prune_subsys() {
 	case "$subsys" in
 	brew)
 		brew cleanup -s
+		rm -rf "$(brew --cache)/downloads"
 		;;
 	apple:garageband)
 		# https://smallbusiness.chron.com/delete-garageband-mac-29847.html
