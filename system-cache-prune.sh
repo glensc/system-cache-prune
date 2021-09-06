@@ -132,7 +132,7 @@ cleanup() {
 }
 
 main() {
-	test -n "${1:-}" || set -- brew composer docker npm yarn
+	test -n "${1:-}" || set -- brew composer docker npm yarn node-gyp helm
 
 	for subsys in "$@"; do
 		cleanup "$subsys"
