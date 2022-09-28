@@ -76,6 +76,9 @@ prune_subsys() {
 	composer)
 		composer clear-cache
 		;;
+	ccache)
+		ccache --clear
+		;;
 	docker:container)
 		docker container prune -f
 		;;
