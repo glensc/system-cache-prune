@@ -138,7 +138,7 @@ cleanup() {
 }
 
 main() {
-	test -n "${1:-}" || set -- brew composer docker npm yarn node-gyp helm
+	test -n "${1:-}" || set -- brew composer docker npm yarn node-gyp helm pipenv
 
 	for subsys in "$@"; do
 		cleanup "$subsys"
