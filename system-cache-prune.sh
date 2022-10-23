@@ -112,6 +112,9 @@ prune_subsys() {
 	helm)
 		rm -rf ~/.helm/repository/local/
 		;;
+	pipenv)
+		rm -rf ~/Library/Caches/pipenv/
+		;;
 	node-gyp)
 		rm -rf ~/.node-gyp/
 		;;
