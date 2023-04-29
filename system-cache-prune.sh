@@ -10,7 +10,7 @@ disk_usage() {
 }
 
 usage_diff() {
-	awk  -vbefore="$1" -vafter="$2" 'BEGIN {
+	gawk -vbefore="$1" -vafter="$2" 'BEGIN {
 		diff = (before - after) / 1024;
 		printf("%7.02f MiB\n", diff);
 		exit;
