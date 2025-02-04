@@ -150,7 +150,7 @@ cleanup() {
 }
 
 main() {
-	test -n "${1:-}" || set -- brew composer docker npm yarn node-gyp helm pipenv
+	test -n "${1:-}" || set -- brew composer docker npm yarn pnpm deno node-gyp helm pip pipenv jetbrains
 
 	for subsys in "$@"; do
 		cleanup "$subsys"
