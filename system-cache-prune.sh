@@ -124,6 +124,9 @@ prune_subsys() {
 	deno)
 		rm -rf ~/Library/Caches/deno/
 		;;
+	jetbrains)
+		rm -rf ~/Library/Caches/JetBrains/*
+		;;
 	node-gyp)
 		rm -rf ~/.node-gyp/ ~/Library/Caches/node-gyp/
 		;;
