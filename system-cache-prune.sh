@@ -115,6 +115,9 @@ prune_subsys() {
 	helm)
 		rm -rf ~/.helm/repository/local/
 		;;
+	pip)
+		pip cache purge
+		;;
 	pipenv)
 		rm -rf ~/Library/Caches/pipenv/
 		;;
