@@ -122,7 +122,7 @@ prune_subsys() {
 		rm -rf ~/Library/Caches/pipenv/
 		;;
 	node-gyp)
-		rm -rf ~/.node-gyp/
+		rm -rf ~/.node-gyp/ ~/Library/Caches/node-gyp/
 		;;
 	tabnine)
 		rm -rf ~/.tabnine/
