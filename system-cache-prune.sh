@@ -100,6 +100,9 @@ prune_subsys() {
 	npm)
 		npm cache clean --force
 		;;
+	pnpm)
+		pnpm store prune
+		;;
 	yarn)
 		yarn cache clean
 		;;
