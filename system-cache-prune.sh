@@ -121,6 +121,9 @@ prune_subsys() {
 	pipenv)
 		rm -rf ~/Library/Caches/pipenv/
 		;;
+	deno)
+		rm -rf ~/Library/Caches/deno/
+		;;
 	node-gyp)
 		rm -rf ~/.node-gyp/ ~/Library/Caches/node-gyp/
 		;;
