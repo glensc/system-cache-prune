@@ -160,6 +160,12 @@ prune_subsys() {
 			cleanup "$subsys"
 		done
 		;;
+	extreme)
+		set -- tabnine jetbrains
+		for subsys in "$@"; do
+			cleanup "$subsys"
+		done
+		;;
 	esac
 }
 
