@@ -112,6 +112,9 @@ prune_subsys() {
 	yarn)
 		yarn cache clean
 		;;
+	yarn:berry)
+		rm -rf ~/.yarn/berry
+		;;
 	cpanm)
 		rm -rf ~/.cpanm/work
 		;;
