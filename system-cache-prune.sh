@@ -91,6 +91,9 @@ prune_subsys() {
 	docker:disk-image)
 		docker run --privileged --pid=host docker/desktop-reclaim-space
 		;;
+	docker:sbom)
+		rm -rf ~/.docker/sbom ~/.docker/scout/sbom
+		;;
 	docker)
 		prune_subsys docker:container
 		prune_subsys docker:image
