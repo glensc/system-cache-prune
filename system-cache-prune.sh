@@ -154,6 +154,12 @@ prune_subsys() {
 	tabnine)
 		rm -rf ~/.tabnine/
 		;;
+	default)
+		set -- brew composer docker npm yarn pnpm deno node-gyp helm pip pipenv cpanm bun nvm ruby:bundler
+		for subsys in "$@"; do
+			cleanup "$subsys"
+		done
+		;;
 	esac
 }
 
@@ -171,7 +177,7 @@ cleanup() {
 }
 
 main() {
-	test -n "${1:-}" || set -- brew composer docker npm yarn pnpm deno node-gyp helm pip pipenv jetbrains
+	test -n "${1:-}" || set -- default
 
 	for subsys in "$@"; do
 		cleanup "$subsys"
