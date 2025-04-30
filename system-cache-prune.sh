@@ -94,6 +94,9 @@ prune_subsys() {
 	docker:sbom)
 		rm -rf ~/.docker/sbom ~/.docker/scout/sbom
 		;;
+	docker:buildx)
+		rm -rf ~/.docker/buildx/refs
+		;;
 	docker)
 		prune_subsys docker:container
 		prune_subsys docker:image
