@@ -142,6 +142,9 @@ prune_subsys() {
 	ruby:bundler)
 		rm -rf ~/.bundle/cache
 		;;
+	nvm)
+		rm -rf ~/.nvm/.cache
+		;;
 	jetbrains)
 		rm -rf ~/Library/Caches/JetBrains/*
 		;;
