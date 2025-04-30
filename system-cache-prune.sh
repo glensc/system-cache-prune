@@ -136,6 +136,9 @@ prune_subsys() {
 	deno)
 		rm -rf ~/Library/Caches/deno/
 		;;
+	bun)
+		rm -rf ~/.bun/install/cache
+		;;
 	jetbrains)
 		rm -rf ~/Library/Caches/JetBrains/*
 		;;
