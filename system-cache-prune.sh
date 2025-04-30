@@ -118,6 +118,9 @@ prune_subsys() {
 	cpanm)
 		rm -rf ~/.cpanm/work
 		;;
+	pipx)
+		rm -rf ~/.local/pipx/logs ~/.local/pipx/.cache  ~/.local/pipx/py
+		;;
 	draft)
 		rm -rf ~/.draft/cache
 		;;
